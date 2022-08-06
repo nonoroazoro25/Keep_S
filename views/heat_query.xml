@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+
+        <record id="heat_query_tree" model="ir.ui.view">
+            <field name="name">heat_query_tree</field>
+            <field name="model">heat.query</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="category"/>
+                    <field name="name"/>
+                    <field name="gram"/>
+                    <field name="heat"/>
+                    <field name="protein"/>
+                    <field name="carbohydrate"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="heat_query_form" model="ir.ui.view">
+            <field name="name">heat_query_form</field>
+            <field name="model">heat.query</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="category"/>
+                                <field name="heat"/>
+                                <field name="carbohydrate"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="gram"/>
+                                <field name="protein"/>
+                                <field name="price" widget="monetary"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="heat_query_search" model="ir.ui.view">
+            <field name="name">heat_query_search</field>
+            <field name="model">heat.query</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="category"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="heat_query_action_window">
+            <field name="name">热量查询</field>
+            <field name="res_model">heat.query</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

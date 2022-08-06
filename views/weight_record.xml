@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+        <record id="weight_record_tree" model="ir.ui.view">
+            <field name="name">weight_record_tree</field>
+            <field name="model">weight.record</field>
+            <field name="arch" type="xml">
+                <tree js_class="custom_button_user_tree">
+                    <field name="user_id"/>
+                    <field name="weight"/>
+                    <field name="chest_circumference"/>
+                    <field name="waistline"/>
+                    <field name="thigh_circumference"/>
+                    <field name="calf_circumference"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="weight_record_form" model="ir.ui.view">
+            <field name="name">weight_record_form</field>
+            <field name="model">weight.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="确认" class="oe_highlight" type="object" name="confirm" state="draft"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" readonly="1"/>
+                                <field name="weight"/>
+                                <field name="waistline"/>
+                                <field name="calf_circumference"/>
+                                <field name="remark"/>
+                            </group>
+                            <group>
+                                <field name="chest_circumference"/>
+                                <field name="thigh_circumference"/>
+                                <field name="bmi"/>
+                                <field name="photo" widget="image" class="oe_avatar"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="饮食记录">
+                                <field name="diet_ids">
+                                    <tree string='diet' editable="top">
+                                        <field name="category"/>
+                                        <field name="food" widget="many2many_tags"/>
+                                        <field name="total_heat"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="weight_record_search" model="ir.ui.view">
+            <field name="name">weight_record_search</field>
+            <field name="model">weight.record</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="weight"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="weight_record_action_window">
+            <field name="name">体重记录</field>
+            <field name="res_model">weight.record</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

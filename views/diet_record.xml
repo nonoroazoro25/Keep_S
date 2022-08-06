@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+
+        <record id="diet_record_tree" model="ir.ui.view">
+            <field name="name">diet_record_tree</field>
+            <field name="model">diet.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="category"/>
+                    <field name="food"/>
+                    <field name="total_heat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="diet_record_form" model="ir.ui.view">
+            <field name="name">diet_record_form</field>
+            <field name="model">diet.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="category"/>
+                                <field name="food" widget="many2many_tags"/>
+
+                            </group>
+                            <group>
+                                <field name="total_heat"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="diet_record_search" model="ir.ui.view">
+            <field name="name">diet_record_search</field>
+            <field name="model">diet.record</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="category"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="diet_record_action_window">
+            <field name="name">饮食记录</field>
+            <field name="res_model">diet.record</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="体重管理" id="weight_management_menu_root"/>
+
+        <menuitem name="体重记录"
+                  id="menu_weight_record_window"
+                  parent="Keep_S.weight_management_menu_root"
+                  sequence="1"
+                  action="weight_record_action_window"/>
+        <menuitem name="饮食记录"
+                  id="menu_diet_record_window"
+                  parent="Keep_S.weight_management_menu_root"
+                  sequence="2"
+                  action="diet_record_action_window"/>
+        <menuitem name="热量查询"
+                  id="menu_heat_query_window"
+                  parent="Keep_S.weight_management_menu_root"
+                  sequence="3"
+                  action="heat_query_action_window"/>
+        <menuitem name="配置"
+                  id="menu_config_window"
+                  parent="Keep_S.weight_management_menu_root"
+                  sequence="10"/>
+
+    </data>
+</odoo>

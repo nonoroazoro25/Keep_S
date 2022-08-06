@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_diet_record,diet.record,model_diet_record,base.group_user,1,1,1,1
+access_weight_record,weight.record,model_weight_record,base.group_user,1,1,1,1
+access_heat_query,heat.query,model_heat_query,base.group_user,1,1,1,1
